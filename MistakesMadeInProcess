@@ -1,0 +1,2 @@
+int method didn't return anything 
+in the method "rewind" the n was not being updated so it created an infinite loop

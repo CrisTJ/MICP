@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+bool validInput(int n){
+
+    if((n<1000000)&&((n-9)>1))
+        return true;
+    else return false;
+}
+int rewind(int n){
+
+    int iMod = 0;
+    int iReversed = 0;
+
+    do{
+
+        iMod = n%10;
+        iReversed = (iReversed*10)+iMod;
+        n = n/10;
+
+    }while(n!=0);
+
+    return iReversed;
+}
+bool isPalindrome(int n){
+
+    if(rewind(n)==n)
+        return true;
+    else{
+        n = rewind(n)+ n;
+        if(validInput(n))
+           isPalindrome(n);
+        else return false;
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    if(validInput(n))
+        isPalindrome(n);
+    else cout<<false;
+
+
+    return 0;
+}
