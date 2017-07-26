@@ -1,0 +1,7 @@
+1 - Single digits
+333 - same number
+-1 - negatives
+12321 - already a palindrome and with odd number of digits 
+37 - must be turned into a palindrome 
+1221 - already a palindrome and with pair number of digits
+1000001 - palindrome that is bigger than it is supposed to handle
