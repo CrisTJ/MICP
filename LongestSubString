@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+int iMax=0;
+string longestSubS= "";
+
+void maxLength(string s){
+    if(iMax<s.length()){
+
+        iMax= s.length();
+        longestSubS = s;
+    }
+}
+void longestSubString(string s){
+    int repPos = 0; //position of the repeated char
+    int firstRep = 0;//position of the first frequency of the repeated char
+    for(int i=0; i<s.length();i++){
+        if(s.find(s[i]>0)){
+            repPos=s.find(s[i]);
+            firstRep=i;
+            maxLength(s.substr(firstRep,repPos-firstRep));
+        }
+    }
+    string aux = s.substr(firstRep, s.length());
+    maxLength(aux);
+}
+
+int main()
+{
+    string s;
+    cin>>s;
+    //validInput(s);
+    longestSubString(s);
+    cout<<longestSubS<<" "<< iMax;
+
+    return 0;
+}
+//mistakes
+//1. wrong use of substrings, substr(initialpos, numberofcharacters)
