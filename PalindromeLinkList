@@ -1,0 +1,80 @@
+//
+//  main.cpp
+//  Palindromo_linkedlist
+//
+//  Created by Cristina Jimenez on 8/25/17.
+//  Copyright © 2017 Cristina Jimenez. All rights reserved.
+//
+
+#include <iostream>
+
+struct Node {
+    char x;
+    Node *next;
+};
+
+class LinkedList{
+    Node *head;
+    
+public:
+    
+    LinkedList(struct Node *head){
+        this->head = head;
+    }
+    
+    void addNode(struct Node *&head, char n){
+        struct Node *NewNode = new Node;
+        NewNode-> x = n;
+        NewNode -> next = head;
+        head = NewNode;
+    }
+    
+    void initNode(struct Node *head, int n){
+        head -> x = n;
+        head -> next = NULL;
+        
+    }
+};
+void removeSpaces(struct Node *head, int listLength){
+    Node actual = *head;
+    
+    
+    for(int i = 0; i < listLength; i++){
+        if(actual == " "){
+            
+        }
+    }
+    
+}
+
+void reverse(){
+    
+}
+
+bool isPalindrome(){
+    return true;
+}
+
+int listLength(){
+    int cont = 0;
+    return cont++;
+}
+
+int main(int argc, const char * argv[]) {
+    
+    //receives input from user
+    std::string s;
+    std::cin>> s;
+    
+    //creates link list
+    Node *head = nullptr;
+    LinkedList l(head);
+
+    //inserts input from user to linkedlist
+    for(int i = 1; i < s.length(); i++){
+        l.addNode(head, s[i]);
+    }
+    
+    
+    return 0;
+}
